@@ -1,4 +1,4 @@
-# Raspberry Pi Pico Bluetooth Low Energy
+# Raspberry Pi Pico W Bluetooth Low Energy
 
 ## BT Server
 - Gets temperature data from Pico's onboard thermometer
@@ -35,3 +35,10 @@ Prints from Pico can be listened to on the terminal
 ```bash
 sudo minicom -b 115200 -o -D /dev/ttyACM1
 ```
+
+## Resources
+- [Getting started with Pico](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+- [Pico C SDK Documentation](https://www.raspberrypi.com/documentation/pico-sdk/)
+- [Pico W Bluetooth](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf)
+- [BTStack Documentation](https://bluekitchen-gmbh.com/btstack)
+- [BTStack Repo](https://github.com/bluekitchen/btstack)
