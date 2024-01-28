@@ -1,5 +1,21 @@
 # Raspberry Pi Pico Bluetooth Low Energy
 
+## BT Server
+- Gets temperature data from Pico's onboard thermometer
+- Provides Generic Attribute Profile (GATT)
+Environmental Sensing service with Temperature Celsius characteristic,
+enabling clients to connect to it (connection is exclusive)
+- If the client has enabled notifications, they are being sent every second
+- When no client is connected, acts as a peripheral role
+in Generic Access Profile (GAP) and periodically sends out advertising packets that have the temperature embedded.
+
+## BT Client
+- Scans devices within reach and looks for Environmental sensing service
+being provided
+- When found, it connects to the server and looks for 
+Temperature Celsius characteristic
+- When found, it subscribes for notifications.
+
 ## How to compile
 ```bash
 mkdir build
@@ -13,3 +29,9 @@ make
 Files `bt_server.uf2` and `bt_client.uf2` were created.  
 Hold BOOTSEL button on Pi Pico while connecting it to the PC.  
 Then copy one of the files to it.
+
+## Listen to Pico
+Prints from Pico can be listened to on the terminal
+```bash
+sudo minicom -b 115200 -o -D /dev/ttyACM1
+```
