@@ -33,7 +33,7 @@ Then copy one of the files to it.
 ## Listen to Pico
 Prints from Pico can be listened to on the terminal
 ```bash
-sudo minicom -b 115200 -o -D /dev/ttyACM1
+sudo minicom -b 115200 -o -D /dev/ttyACM0
 ```
 
 ## Resources
